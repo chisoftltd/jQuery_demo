@@ -52,7 +52,7 @@
             navigation.find('a[href^="http://"]').attr('style', 'font-weight:bold');
             navigation.find('a[href*="gis"]').attr('style', 'color:green');
 
-            $('#target').prev().attr('style', 'color:skyblue');
+            $('#target').nextAll().attr('style', 'color:skyblue');
         });
     </script>
 </body>
