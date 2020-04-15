@@ -21,6 +21,14 @@
         </div>
     </header>
 
+    <nav id="navigation">
+        <ul>
+            <li><a href="http://www.microsoft.com">Microsoft</a></li>
+            <li><a href="http://www.adventure-works.com">AdventureWorks</a></li>
+            <li><a href="register">Register</a></li>
+        </ul>
+    </nav>
+
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.js"></script>
     <script>
         $(function () {
@@ -30,7 +38,10 @@
             $('h1[custom*="5"]').text('Hello attribute contains!');
 
             $('header > h1').text('This Parent Child relship!');
-            
+            var navigation = $('#navigation');
+            navigation.find('a[href^="http://"]').attr('style', 'color:red');
+            navigation.find('a[href^="http://"]').attr('style', 'font-weight:bold');
+            navigation.find('a[href*="gis"]').attr('style', 'color:green');
         });
     </script>
 </body>
