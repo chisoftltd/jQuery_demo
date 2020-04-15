@@ -3,6 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <style>
+        body{
+            font-size: 32px;
+        }
+        div{
+            margin-top: .1em;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello H1!</h1>
@@ -41,6 +49,10 @@
     </div>
 
     <div id="display"></div>
+
+    <div id="target2">Demo Element 1</div>
+
+    <div id="target1">Demo Element 2</div>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.js"></script>
     <script>
         $(function () {
@@ -70,6 +82,14 @@
 
             var jQueryObject = $(foundElement);
             jQueryObject.attr('style', 'color:red');
+
+            $('#target').attr('style', 'color:#934F95');
+
+            var style = $('#target').attr('style');
+            alert(style);
+
+            $('#target1').html('<u>Updated!</u>');
+            $('#target2').text('<u>Updated!</u>');
         });
     </script>
 </body>
