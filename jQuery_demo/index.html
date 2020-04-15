@@ -10,6 +10,17 @@
     <h1 custom="h1-demo">Hello another H1!</h1>
     <h1 class="col-md-4">Hello another H1!</h1>
     <h1 custom="col-md-5">Hello another H1!</h1>
+
+    <header>
+        <h1>Parent child</h1>
+    </header>
+
+    <header>
+        <div>
+            <h1>Decendant!</h1>
+        </div>
+    </header>
+
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.js"></script>
     <script>
         $(function () {
@@ -17,6 +28,9 @@
             $('h1[custom="h1-demo"]').text('Hello custom attribute!');
             $('h1[class^="col"]').text('Hello attribute starts with!');
             $('h1[custom*="5"]').text('Hello attribute contains!');
+
+            $('header > h1').text('This Parent Child relship!');
+            
         });
     </script>
 </body>
