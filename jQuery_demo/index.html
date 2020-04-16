@@ -32,32 +32,27 @@
     </style>
 </head>
 <body>
-    <div id="target">Demo Element</div>
-    <div id="display"></div>
-
-    <div>
-        <label for="phone">Phone</label>
-        <input type="text" id="phone" />
-        <span id="phone-help"></span>
-    </div>
+   <form>
+       <div>
+           <label for="name">Name:</label>
+           <input type="text" class="form-ontrol" id="name"/>
+           <span class="help">Please enter a name</span>
+       </div>
+       <div>
+           <label for="email">Email:</label>
+           <input type="text" class="form-ontrol" id="email" />
+           <span class="help">Please enter an email</span>
+       </div>
+   </form>
 
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
-            $('#target').click(function (event) {
-                output = 'User clicked on ' + event.pageX + '/' + event.pageY;
-                $('#display').text(output);
-                $('#target').dblclick(function () { alert('hello, world!'); });
-            });
-
-            // sample JavaScript
-            $('#phone').focus(function () {
-                // Control has focus. Display help
-                $('#phone-help').text('Please enter your phone number as all digits');
+            $('input[type="text"]').focus(function () {
+                $(this).next('span.help').removeAttr('hidden');
             }).blur(function () {
-                // Control lost focus. Clear help
-                $('#phone-help').text('');
-            });
+                $('span.help').attr('hidden', 'hidden');
+            })
         });
     </script>
 </body>
