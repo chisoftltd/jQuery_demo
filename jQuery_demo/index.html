@@ -32,35 +32,24 @@
     </style>
 </head>
 <body>
-    <form>
-        <button type="button" id="first">First button</button>
-        <button type="button" id="Second">Second button</button>
-        <button type="button" id="trigger">trigger</button>
-        <button type="button" id="trigger-handler">triggerHandler</button>
-    </form>
-
-    <div id="display"></div>
+    <div id="target">
+        <div>existing content</div>
+    </div>
 
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
-            $('button').click(function () {
-                // display the id of the button
-                //alert(this.id);
-                $('#display').text(this.id);
-            });
+            // prepend is called on the target, and accepts the new content as the parameter
+            $('#target').prepend('<div>New content before</div>');
 
-            $('#trigger').click(function () {
-                // Would alert every button's id
-                // including the last two
-                $('button').trigger('click');
-            });
+            // prependTo is called on the new content, and accepts the target as the parameter
+            $('<div>New content b4</div>').prependTo('#target');
 
-            // Would alert "first"
-            $('#trigger-handler').click(function () {
-                // Would alert "first"
-                $('button').triggerHandler('click');
-            });
+            // append is called on the target, and accepts the new content as the parameter
+            $('#target').append('<div>New content after</div>');
+
+            // appendTo is called on the new content, and accepts the target as the parameter
+            $('<div>New content later</div>').appendTo('#target');
         });
     </script>
 </body>
