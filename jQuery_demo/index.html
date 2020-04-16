@@ -39,17 +39,17 @@
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
-            // prepend is called on the target, and accepts the new content as the parameter
-            $('#target').prepend('<div>New content before</div>');
+            // before is called on the target, and accepts the new content as a parameter
+            $('#target').before('<div> First content</div>');
 
-            // prependTo is called on the new content, and accepts the target as the parameter
-            $('<div>New content b4</div>').prependTo('#target');
+                // insertBefore is called on the new content, and accepts the target as a parameter
+            $('<div>Initial content</div>').insertBefore('#target');
 
-            // append is called on the target, and accepts the new content as the parameter
-            $('#target').append('<div>New content after</div>');
+            // before is called on the target, and accepts the new content as a parameter
+            $('#target').after('<div> <b>Past</b> content</div>');
 
-            // appendTo is called on the new content, and accepts the target as the parameter
-            $('<div>New content later</div>').appendTo('#target');
+            // insertBefore is called on the new content, and accepts the target as a parameter
+            $('<div> <hr/>Final content</div>').insertAfter('#target');
         });
     </script>
 </body>
