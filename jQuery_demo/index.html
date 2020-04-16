@@ -33,7 +33,13 @@
 </head>
 <body>
     <div id="target">
-        <div>existing content</div>
+        <div class="demo">existing content</div>
+        <div class="demo">Item one</div>
+    </div>
+
+    <div id="target1">
+        <div>Item one</div>
+        <div>Item two</div>
     </div>
 
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
@@ -42,7 +48,7 @@
             // before is called on the target, and accepts the new content as a parameter
             $('#target').before('<div> First content</div>');
 
-                // insertBefore is called on the new content, and accepts the target as a parameter
+            // insertBefore is called on the new content, and accepts the target as a parameter
             $('<div>Initial content</div>').insertBefore('#target');
 
             // before is called on the target, and accepts the new content as a parameter
@@ -50,6 +56,10 @@
 
             // insertBefore is called on the new content, and accepts the target as a parameter
             $('<div> <hr/>Final content</div>').insertAfter('#target');
+            $('#target').wrapAll('<section></section>');
+            $('.demo').wrap('<section></section>');
+
+            $('#target1').wrapInner('<section></section>');
         });
     </script>
 </body>
