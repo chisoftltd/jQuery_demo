@@ -59,9 +59,11 @@
                 $('span.help').attr('hidden', 'hidden');
             });
 
-            $('#target').mouseenter(function () {
+            $('#target').hover(function () {
+                // mouseenter
                 $('#target-help').text('More data');
-            }).mouseleave(function () {
+            }, function () {
+                // mouseleave
                 $('#target-help').text('');
             });
         });
