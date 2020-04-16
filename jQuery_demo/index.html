@@ -32,18 +32,23 @@
     </style>
 </head>
 <body>
-   <form>
-       <div>
-           <label for="name">Name:</label>
-           <input type="text" class="form-ontrol" id="name"/>
-           <span class="help">Please enter a name</span>
-       </div>
-       <div>
-           <label for="email">Email:</label>
-           <input type="text" class="form-ontrol" id="email" />
-           <span class="help">Please enter an email</span>
-       </div>
-   </form>
+    <form>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" class="form-ontrol" id="name" />
+            <span class="help">Please enter a name</span>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="text" class="form-ontrol" id="email" />
+            <span class="help">Please enter an email</span>
+        </div>
+    </form>
+
+    <div>
+        <span id="target">Basic data</span>
+        <span id="target-help"></span>
+    </div>
 
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
@@ -52,7 +57,13 @@
                 $(this).next('span.help').removeAttr('hidden');
             }).blur(function () {
                 $('span.help').attr('hidden', 'hidden');
-            })
+            });
+
+            $('#target').mouseenter(function () {
+                $('#target-help').text('More data');
+            }).mouseleave(function () {
+                $('#target-help').text('');
+            });
         });
     </script>
 </body>
