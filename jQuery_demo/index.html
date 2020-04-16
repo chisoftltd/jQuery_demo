@@ -1,95 +1,63 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <title>Contoso</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <style>
-        body{
-            font-size: 32px;
+        body {
+            font-family: Verdana;
         }
-        div{
-            margin-top: .1em;
+
+        h1, h2, h3 {
+            color: darkblue;
+        }
+
+        .rating-circle {
+            height: 2em;
+            width: 2em;
+            border: .1em solid black;
+            border-radius: 1.1em;
+            display: inline-block;
+            margin: 0;
+            padding: .1em;
+        }
+
+        .rating-hover {
+            background-color: yellow;
+        }
+
+        .rating-chosen {
+            background-color: green;
         }
     </style>
 </head>
 <body>
-    <h1>Hello H1!</h1>
-    <h1 class="demo">Hello another H1!</h1>
-    <h1 custom="h1-demo">Hello another H1!</h1>
-    <h1 class="col-md-4">Hello another H1!</h1>
-    <h1 custom="col-md-5">Hello another H1!</h1>
-
-    <header>
-        <h1>Parent child</h1>
-    </header>
-
-    <header>
-        <div>
-            <h1>Decendant!</h1>
-        </div>
-    </header>
-
-    <nav id="navigation">
-        <ul>
-            <li><a href="http://www.microsoft.com">Microsoft</a></li>
-            <li><a href="http://www.adventure-works.com">AdventureWorks</a></li>
-            <li><a href="register">Register</a></li>
-        </ul>
-    </nav>
-
-    <div id="container">
-        <div>First</div>
-        <div>Second</div>
-        <div>Third</div>
-        <div id="target" style="color:black">Fourth (Target)</div>
-        <div>Fifth</div>
-        <div>Sixth</div>
-        <div>Seventh</div>
-        <div>Eight</div>
-    </div>
-
+    <div id="target">Demo Element</div>
     <div id="display"></div>
 
-    <div id="target2">Demo Element 1</div>
+    <div>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" />
+        <span id="phone-help"></span>
+    </div>
 
-    <div id="target1">Demo Element 2</div>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
-            $('h1[custom=h1-demo]').text('Hello custom attribute!');
-            $('h1[custom="h1-demo"]').text('Hello custom attribute!');
-            $('h1[class^="col"]').text('Hello attribute starts with!');
-            $('h1[custom*="5"]').text('Hello attribute contains!');
+            $('#target').click(function (event) {
+                output = 'User clicked on ' + event.pageX + '/' + event.pageY;
+                $('#display').text(output);
+                $('#target').dblclick(function () { alert('hello, world!'); });
+            });
 
-            $('header > h1').text('This Parent Child relship!');
-            var navigation = $('#navigation');
-            navigation.find('a[href^="http://"]').attr('style', 'color:red');
-            navigation.find('a[href^="http://"]').attr('style', 'font-weight:bold');
-            navigation.find('a[href*="gis"]').attr('style', 'color:green');
-
-            $('#target').prevUntil('.stop').attr('style', 'color:skyblue');
-
-            var element = $('#target');
-            var container = $('#container');
-
-            var index = container.children().index(element);
-
-            $('#display').text('Index is ' + index);
-
-            // get return a DOM element, **NOT** a jQuery object
-            var foundElement = container.children().get(index);
-            // convert to jQuery object
-
-            var jQueryObject = $(foundElement);
-            jQueryObject.attr('style', 'color:red');
-
-            $('#target').attr('style', 'color:#934F95');
-
-            var style = $('#target').attr('style');
-            alert(style);
-
-            $('#target1').html('<u>Updated!</u>');
-            $('#target2').text('<u>Updated!</u>');
+            // sample JavaScript
+            $('#phone').focus(function () {
+                // Control has focus. Display help
+                $('#phone-help').text('Please enter your phone number as all digits');
+            }).blur(function () {
+                // Control lost focus. Clear help
+                $('#phone-help').text('');
+            });
         });
     </script>
 </body>
