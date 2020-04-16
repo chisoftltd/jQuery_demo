@@ -33,9 +33,10 @@
 </head>
 <body>
     <form>
-        <div><button type="button" class="btn validate">First button</button></div>
-        <div><button type="button" class="btn validate">Second button</button></div>
-        <div><button type="button" class="btn">Third button</button></div>
+        <button type="button" id="first">First button</button>
+        <button type="button" id="Second">Second button</button>
+        <button type="button" id="trigger">trigger</button>
+        <button type="button" id="trigger-handler">triggerHandler</button>
     </form>
 
     <div id="display"></div>
@@ -43,8 +44,21 @@
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
-            $('form').one('click', 'button.validate', function () {
-                $('#display').text($('#display').text() + 'Clicked!');
+            $('button').click(function () {
+                // display the id of the button
+                alert(this.id);
+            });
+
+            $('#trigger').click(function () {
+                // Would alert every button's id
+                // including the last two
+                $('button').trigger('click');
+            });
+
+            // Would alert "first"
+            $('#trigger-handler').click(function () {
+                // Would alert "first"
+                $('button').triggerHandler('click');
             });
         });
     </script>
