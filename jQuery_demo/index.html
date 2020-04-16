@@ -33,50 +33,19 @@
 </head>
 <body>
     <form>
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" class="form-ontrol" id="name" />
-            <span class="help">Please enter a name</span>
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="text" class="form-ontrol" id="email" />
-            <span class="help">Please enter an email</span>
-        </div>
+        <div><button type="button" class="btn validate">First button</button></div>
+        <div><button type="button" class="btn validate">Second button</button></div>
+        <div><button type="button" class="btn">Third button</button></div>
     </form>
 
-    <div>
-        <span id="target">Basic data</span>
-        <span id="target-help"></span>
-    </div>
+    <div id="display"></div>
 
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
-            $('input[type="text"]').focus(function () {
-                $(this).next('span.help').removeAttr('hidden');
-            }).blur(function () {
-                $('span.help').attr('hidden', 'hidden');
-                //var value = confirm($('#name').val());
-               // confirm(value);
+            $('form').on('click', 'button.validate', function () {
+                $('#display').text('Clicked!');
             });
-
-            $('#target').hover(function () {
-                // mouseenter
-                $('#target-help').html('<strong> More data </strong>');
-            }, function () {
-                // mouseleave
-                $('#target-help').text('');
-            });
-
-            var style = {
-                color: 'red',
-                backgroundColor: 'skyblue'
-            };
-
-            $('#target').css(style);
-            $('body').css(style);
-            
         });
     </script>
 </body>
