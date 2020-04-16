@@ -57,15 +57,26 @@
                 $(this).next('span.help').removeAttr('hidden');
             }).blur(function () {
                 $('span.help').attr('hidden', 'hidden');
+                //var value = confirm($('#name').val());
+               // confirm(value);
             });
 
             $('#target').hover(function () {
                 // mouseenter
-                $('#target-help').text('More data');
+                $('#target-help').html('<strong> More data </strong>');
             }, function () {
                 // mouseleave
                 $('#target-help').text('');
             });
+
+            var style = {
+                color: 'red',
+                backgroundColor: 'skyblue'
+            };
+
+            $('#target').css(style);
+            $('body').css(style);
+            
         });
     </script>
 </body>
