@@ -7,63 +7,24 @@
         body {
             font-family: Verdana;
         }
-
-        h1, h2, h3 {
-            color: darkblue;
-        }
-
-        .rating-circle {
-            height: 2em;
-            width: 2em;
-            border: .1em solid black;
-            border-radius: 1.1em;
-            display: inline-block;
-            margin: 0;
-            padding: .1em;
-        }
-
-        .rating-hover {
-            background-color: yellow;
-        }
-
-        .rating-chosen {
-            background-color: green;
+        .red {
+            color: red;
         }
     </style>
 </head>
 <body>
     <div id="target">Show or hide</div>
-    <button type="button" id="btn-toggle">Toggle</button>
-    <form>
-        <div>
-            <label>Name:</label>
-            <input type="text" />
-        </div>
-        <button type="button" id="show-additional-information">
-            Show additional information
-        </button>
-        <div id="additional-information" class="hidden">
-            <label>Additional information:</label>
-            <input type="text" />
-        </div>
-    </form>
+    <button type="button" class="btn" id="executor">Execute!!</button>
+
+   
+
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
-            $('#btn-toggle').click(function () {
-                // animation will take one second
-                $('#target').toggle(1000);
-            });
-
-            $('#show-additional-information').click(function () {
-                $('#additional-information').slideToggle(750);
-            });
+            $('#executor').click(function () {
+                $('#target').replaceWith('<div class="red" id="target">New content</div>');
+            })
         });
     </script>
-    <style>
-        .hidden {
-            display: none;
-        }
-    </style>
 </body>
 </html>
