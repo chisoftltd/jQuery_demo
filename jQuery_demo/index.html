@@ -13,16 +13,23 @@
     </style>
 </head>
 <body>
-    <div id="target">Show or hide</div>
+    <h2>Clone</h2>
     <button type="button" class="btn" id="executor">Execute!!</button>
 
-   
+   <div id="dialog">First line</div>
+
+   <div id="container">
+
+   </div>
 
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
+
+            var $dialog = $('#dialog').clone();
+            $dialog.removeAttr('id');
             $('#executor').click(function () {
-                $('#target').replaceWith('<div class="red" id="target">New content</div>');
+                $('#container').append($dialog.clone());
             })
         });
     </script>
