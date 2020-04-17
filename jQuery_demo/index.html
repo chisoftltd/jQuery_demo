@@ -14,22 +14,27 @@
 </head>
 <body>
     <h2>Clone</h2>
-    <button type="button" class="btn" id="executor">Execute!!</button>
+  
+    <div class="user-entry">
+        <label>Email:</label>
+        <input type="email" />
+        <label>Password:</label>
+        <input type="password" />
+    </div>
 
-   <div id="dialog">First line</div>
-
-   <div id="container">
-
-   </div>
+    <button type="button" id="add-line">Add new line</button>
+    <div id="container">
+        
+    </div>
 
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
 
-            var $dialog = $('#dialog').clone();
-            $dialog.removeAttr('id');
-            $('#executor').click(function () {
-                $('#container').append($dialog.clone());
+            var $userentry = $('.user-entry').clone();
+            //$dialog.removeAttr('id');
+            $('#add-line').click(function () {
+                $('#container').append($userentry.clone());
             })
         });
     </script>
