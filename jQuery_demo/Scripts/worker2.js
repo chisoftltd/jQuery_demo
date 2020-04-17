@@ -1,6 +1,4 @@
-﻿// worker2.js
-
-self.addEventListener('message', function (e) {
+﻿self.addEventListener('message', function (e) {
 	if (e.data === 'START') {
 		// Start message received.
 		// Begin work

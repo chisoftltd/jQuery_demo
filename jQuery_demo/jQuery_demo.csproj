@@ -68,9 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="demo_workers.js" />
+    <Content Include="Scripts\worker_deferred.js" />
     <Content Include="worker.html" />
     <Content Include="worker2.html" />
     <Content Include="worker2.js" />
+    <Content Include="worker_deferred.html" />
+    <Content Include="worker_deferred.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="index.html" />
     <Content Include="Scripts\jquery-3.4.1.js" />
