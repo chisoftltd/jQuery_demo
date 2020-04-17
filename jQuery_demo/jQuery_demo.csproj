@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="demo_workers.js" />
+    <Content Include="json.html" />
     <Content Include="Scripts\worker_deferred.js" />
     <Content Include="worker.html" />
     <Content Include="worker2.html" />
