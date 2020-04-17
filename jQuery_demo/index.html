@@ -13,29 +13,28 @@
     </style>
 </head>
 <body>
-    <h2>Clone</h2>
-  
-    <div class="user-entry">
-        <label>Email:</label>
-        <input type="email" />
-        <label>Password:</label>
-        <input type="password" />
-    </div>
+    <h2>Combining cloning and animations</h2>
 
     <button type="button" id="add-line">Add new line</button>
     <div id="container">
-        
+        <div class="user-entry">
+            <label>Email:</label>
+            <input type="email" />
+            <label>Password:</label>
+            <input type="password" />
+        </div>
     </div>
 
     <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
     <script>
         $(function () {
-
-            var $userentry = $('.user-entry').clone();
-            //$dialog.removeAttr('id');
+            $userForm = $('.user-entry').clone();
+            $userForm.css('display', 'none');
             $('#add-line').click(function () {
-                $('#container').append($userentry.clone());
-            })
+                var $newUserForm = $userForm.clone();
+                $('#container').append($newUserForm);
+                $newUserForm.show(1000);
+            });
         });
     </script>
 </body>
